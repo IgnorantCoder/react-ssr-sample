@@ -1,16 +1,16 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter } from 'connected-react-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import Routes from './Routes';
 import { initState, RootState } from './modules';
 import { configureStore } from './isormorphic/store';
 
-declare var window: { INITIAL_STATE: RootState; };
+declare var window: { INITIAL_STATE: Partial<RootState>; };
 
-const initialState: RootState = window.INITIAL_STATE || initState();
+const initialState: Partial<RootState> = window.INITIAL_STATE || initState();
 delete window.INITIAL_STATE;
 
 const preload = configureStore(

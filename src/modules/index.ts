@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { routerReducer, RouterState } from 'react-router-redux';
+import { RouterState } from 'connected-react-router';
 import * as App from './App';
 
 export type RootState = {
@@ -8,16 +8,12 @@ export type RootState = {
 };
 
 export const rootReducer = combineReducers<RootState>({
-    app: App.reducer,
-    router: routerReducer,
+    app: App.reducer
 } as any);
 
-export const initState = (): RootState => {
+export const initState = (): Partial<RootState> => {
     return {
         app: App.init(),
-        router: {
-            location: null,
-        },
     };
 };
 
