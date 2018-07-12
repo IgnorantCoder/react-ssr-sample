@@ -1,0 +1,36 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "webpack --config webpack.config.server.js&&webpack --config webpack.config.client.js",
+    "start": "npm run build&&node dist/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-redux": "^5.0.0-alpha.9",
+    "recompose": "^0.27.1",
+    "redux": "^4.0.0",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/react": "^16.4.6",
+    "@types/react-dom": "^16.0.6",
+    "@types/react-helmet": "^5.0.6",
+    "@types/react-redux": "^6.0.4",
+    "@types/react-router": "^4.0.28",
+    "@types/react-router-dom": "^4.2.7",
+    "@types/react-router-redux": "^5.0.15",
+    "@types/recompose": "^0.26.1",
+    "ts-loader": "^4.4.2",
+    "typescript": "^2.9.2",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
