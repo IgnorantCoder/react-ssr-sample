@@ -40,12 +40,8 @@ const component: React.SFC<Props> = (props: Props) => {
 
 const mapStateToProps = (state: RootState, ownProps: OwnProps) => {
     const loc = state.router.location;
-    if (loc == null) {
-        return {};
-    }
-    
     return {
-        enabled: ownProps.items.map(e => e.to !== loc.pathname),
+        enabled: ownProps.items.map(e => loc == null ? true : e.to !== loc.pathname),
     };
 };
 
